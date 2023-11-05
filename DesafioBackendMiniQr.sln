@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQrApi.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQr.Api", "DesafioBackendMiniQr.Api\DesafioBackendMiniQr.Api.csproj", "{6F575AA3-0BCC-427C-A6A8-42C9DAF4C8B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQrApi.CrossCutting.IoC", "DesafioBackendMiniQrApi.CrossCutting.IoC\DesafioBackendMiniQrApi.CrossCutting.IoC.csproj", "{7DF73BA4-5A02-4471-98B2-23521C30CE45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{6F575AA3-0BCC-427C-A6A8-42C9DAF4C8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F575AA3-0BCC-427C-A6A8-42C9DAF4C8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F575AA3-0BCC-427C-A6A8-42C9DAF4C8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF73BA4-5A02-4471-98B2-23521C30CE45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF73BA4-5A02-4471-98B2-23521C30CE45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF73BA4-5A02-4471-98B2-23521C30CE45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF73BA4-5A02-4471-98B2-23521C30CE45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{951A4DC0-CE4C-4650-806E-FA54166305D1} = {56D952A8-839A-409C-9B98-117EBC16A6F9}
 		{7B0BB7CB-3AAB-452A-AB81-C73B1048823B} = {B6FA7487-42B6-4AFF-BAB4-55A38745932A}
 		{6F575AA3-0BCC-427C-A6A8-42C9DAF4C8B4} = {7C7BAC2E-5A2D-4245-B1B2-87553E4915A6}
+		{7DF73BA4-5A02-4471-98B2-23521C30CE45} = {5BD57F3A-35FA-4096-A8E2-7B8C98450C70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {07F09FA2-9C80-42E8-9305-2FDAEE282994}
