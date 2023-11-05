@@ -12,3 +12,12 @@
 /DesafioBackendMiniQrApi.Tests/obj
 /obj
 /DesafioBackendMiniQr.Api/obj
+/DesafioBackendMiniQr.Api/bin/
+/DesafioBackendMiniQrApi.Application/bin/
+/DesafioBackendMiniQrApi.CrossCutting/bin/
+/DesafioBackendMiniQrApi.CrossCutting.IoC/bin/
+/DesafioBackendMiniQrApi.CrossCutting.IoC/obj/
+/DesafioBackendMiniQrApi.Data/bin/
+/DesafioBackendMiniQrApi.Domain/bin/
+/DesafioBackendMiniQrApi.Integrations/bin/
+/DesafioBackendMiniQrApi.Tests/bin/
