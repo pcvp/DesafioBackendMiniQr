@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using DesafioBackendMiniQrApi.Application.ViewModels.Inputs;
+using DesafioBackendMiniQrApi.Application.ViewModels.Results;
 using DesafioBackendMiniQrApi.Domain.Commands;
+using DesafioBackendMiniQrApi.Domain.Entities;
 
 namespace DesafioBackendMiniQrApi.Application.AutoMapper
 {
@@ -9,6 +11,7 @@ namespace DesafioBackendMiniQrApi.Application.AutoMapper
         public VmMappingProfile()
         {
             CreateMap<CreateChargeInputVm, CreateChargeCommand>();
+            CreateMap<Charge, ResultCreateChargeVm>();
         }
     }
 }

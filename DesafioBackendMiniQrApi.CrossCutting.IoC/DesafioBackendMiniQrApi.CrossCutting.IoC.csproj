@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DesafioBackendMiniQrApi.Application\DesafioBackendMiniQrApi.Application.csproj" />
     <ProjectReference Include="..\DesafioBackendMiniQrApi.CrossCutting\DesafioBackendMiniQrApi.CrossCutting.csproj" />
+    <ProjectReference Include="..\DesafioBackendMiniQrApi.Data\DesafioBackendMiniQrApi.Data.csproj" />
   </ItemGroup>
 
 </Project>

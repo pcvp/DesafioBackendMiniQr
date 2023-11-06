@@ -1,5 +1,6 @@
 using DesafioBackendMiniQrApi.CrossCutting.Helpers;
-using DesafioBackendMiniQrApi.CrossCutting; 
+using DesafioBackendMiniQrApi.CrossCutting;
+using DesafioBackendMiniQrApi.CrossCutting.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,12 +1,12 @@
 ﻿using FluentValidation.Results;
 
-namespace BaseService.Infra.CrossCutting.Models
+namespace DesafioBackendMiniQrApi.CrossCutting.Models
 {
     public abstract class Entity
     {
         protected Entity()
         {
-            ValidationResult = new ValidationResult();
+            //ValidationResult = new ValidationResult();
         }
         public Guid Id { get; protected set; }
 
@@ -16,7 +16,7 @@ namespace BaseService.Infra.CrossCutting.Models
 
         public abstract bool IsValid();
 
-        public virtual ValidationResult ValidationResult { get; protected set; }        
+        //public virtual ValidationResult ValidationResult { get; protected set; }        
 
         public void GenerateId(Guid? id = null)
         {
@@ -41,19 +41,6 @@ namespace BaseService.Infra.CrossCutting.Models
         public override string ToString()
         {
             return GetType().Name + "[Id = " + Id + " ]";
-        }
-
-        protected void ValidateRelationship<TChild>(TChild? filho) where TChild : Entity
-        {
-            if (filho == null || filho.IsValid())
-            {
-                return;
-            }
-
-            foreach (var error in filho.ValidationResult.Errors)
-            {
-                ValidationResult.Errors.Add(error);
-            }
         }
     }
 }

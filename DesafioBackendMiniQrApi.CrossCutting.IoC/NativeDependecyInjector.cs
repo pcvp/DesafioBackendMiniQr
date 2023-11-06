@@ -1,21 +1,38 @@
-﻿using DesafioBackendMiniQrApi.Application.Interfaces;
+﻿using System.Reflection;
+using DesafioBackendMiniQrApi.Application.Interfaces;
 using DesafioBackendMiniQrApi.Application.Services;
+using DesafioBackendMiniQrApi.CrossCutting.ErrorNotification;
 using DesafioBackendMiniQrApi.CrossCutting.Helpers;
-using System.Reflection;
-using MediatR;
+using DesafioBackendMiniQrApi.CrossCutting.Interfaces;
+using DesafioBackendMiniQrApi.Data.Context;
+using DesafioBackendMiniQrApi.Data.Repositories;
+using DesafioBackendMiniQrApi.Data.Uow;
+using DesafioBackendMiniQrApi.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DesafioBackendMiniQrApi.CrossCutting;
+namespace DesafioBackendMiniQrApi.CrossCutting.IoC;
 
 public static class NativeDependecyInjector
 {
-    private static readonly string ASSEMBLY_NAME_DOMAIN = "DesafioBackendMiniQrApi.Domain";
-    private static readonly string ASSEMBLY_NAME_APPLICATION = "DesafioBackendMiniQrApi.Application";
-    private static readonly string ASSEMBLY_NAME_CROSS_CUTTING = "DesafioBackendMiniQrApi.CrossCutting";
+    private const string AssemblyNameDomain = "DesafioBackendMiniQrApi.Domain";
+    private const string AssemblyNameApplication = "DesafioBackendMiniQrApi.Application";
+    private const string AssemblyNameCrossCutting = "DesafioBackendMiniQrApi.CrossCutting";
 
     public static IServiceCollection RegisterServices(this IServiceCollection services, AppSettings configuration)
     {
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<IErrorNotificationResult, ErrorNotificationResult>();
+
+        services.AddDbContextPool<DataBaseContext>((services, optionsBuilder) =>
+        {
+            optionsBuilder
+                .UseLazyLoadingProxies()
+                .UseSqlServer(configuration?.ConnectionStrings?.DbContext ?? string.Empty);
+        });
+
         services.AddScoped<IChargeService, ChargeService>();
+        services.AddScoped<IChargeRepository, ChargeRepository>();
 
         services.AddAutoMapper(GetAssembliesToAutoMapper());
         return services;
@@ -39,8 +56,8 @@ public static class NativeDependecyInjector
     {
         var assemblyNames = new[]
         {
-            "DesafioBackendMiniQrApi.Domain",
-            "DesafioBackendMiniQrApi.CrossCutting",
+            AssemblyNameDomain,
+            AssemblyNameCrossCutting
         };
 
         return assemblyNames.Select(name => Assembly.Load(name)).ToArray();
@@ -51,8 +68,8 @@ public static class NativeDependecyInjector
     {
         return new[]
         {
-                AppDomain.CurrentDomain.Load(ASSEMBLY_NAME_DOMAIN),
-                AppDomain.CurrentDomain.Load(ASSEMBLY_NAME_APPLICATION)
+                AppDomain.CurrentDomain.Load(AssemblyNameDomain),
+                AppDomain.CurrentDomain.Load(AssemblyNameApplication)
         };
     }
     #endregion
