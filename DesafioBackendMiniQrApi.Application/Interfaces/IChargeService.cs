@@ -5,6 +5,6 @@ namespace DesafioBackendMiniQrApi.Application.Interfaces
 {
     public interface IChargeService
     {
-        Task<ResultCreateChargeVm> CreateCharge(InputCreateChargeVm createChargeVm);
+        Task<ResultCreateChargeVm> CreateCharge(CreateChargeInputVm createChargeVm);
     }
 }

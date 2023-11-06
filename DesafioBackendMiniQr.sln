@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Service", "1-Service", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{B7DC4E6D-B71E-466D-A31E-AA778B929917}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQrApi.Application", "DesafioBackendMiniQrApi.Application\DesafioBackendMiniQrApi.Application.csproj", "{8FBDAC3C-AB19-4D68-B4E0-6CA555E713D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.Application", "DesafioBackendMiniQrApi.Application\DesafioBackendMiniQrApi.Application.csproj", "{8FBDAC3C-AB19-4D68-B4E0-6CA555E713D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{FD642B26-E912-4825-88E1-7E6EC3D44CBD}"
 EndProject
@@ -21,19 +21,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Integrations", "5 - Int
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Tests", "6 - Tests", "{B6FA7487-42B6-4AFF-BAB4-55A38745932A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQrApi.Domain", "DesafioBackendMiniQrApi.Domain\DesafioBackendMiniQrApi.Domain.csproj", "{B6C4814E-C550-429D-8E9D-E1E563F7AE8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.Domain", "DesafioBackendMiniQrApi.Domain\DesafioBackendMiniQrApi.Domain.csproj", "{B6C4814E-C550-429D-8E9D-E1E563F7AE8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQrApi.Data", "DesafioBackendMiniQrApi.Data\DesafioBackendMiniQrApi.Data.csproj", "{79B9D562-5D22-4182-81D7-C61000C5EBC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.Data", "DesafioBackendMiniQrApi.Data\DesafioBackendMiniQrApi.Data.csproj", "{79B9D562-5D22-4182-81D7-C61000C5EBC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQrApi.CrossCutting", "DesafioBackendMiniQrApi.CrossCutting\DesafioBackendMiniQrApi.CrossCutting.csproj", "{0636F5C4-D9C1-48EF-967A-328C580F76A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.CrossCutting", "DesafioBackendMiniQrApi.CrossCutting\DesafioBackendMiniQrApi.CrossCutting.csproj", "{0636F5C4-D9C1-48EF-967A-328C580F76A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQrApi.Integrations", "DesafioBackendMiniQrApi.Integrations\DesafioBackendMiniQrApi.Integrations.csproj", "{951A4DC0-CE4C-4650-806E-FA54166305D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.Integrations", "DesafioBackendMiniQrApi.Integrations\DesafioBackendMiniQrApi.Integrations.csproj", "{951A4DC0-CE4C-4650-806E-FA54166305D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQrApi.Tests", "DesafioBackendMiniQrApi.Tests\DesafioBackendMiniQrApi.Tests.csproj", "{7B0BB7CB-3AAB-452A-AB81-C73B1048823B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.Tests", "DesafioBackendMiniQrApi.Tests\DesafioBackendMiniQrApi.Tests.csproj", "{7B0BB7CB-3AAB-452A-AB81-C73B1048823B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQr.Api", "DesafioBackendMiniQr.Api\DesafioBackendMiniQr.Api.csproj", "{6F575AA3-0BCC-427C-A6A8-42C9DAF4C8B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQr.Api", "DesafioBackendMiniQr.Api\DesafioBackendMiniQr.Api.csproj", "{6F575AA3-0BCC-427C-A6A8-42C9DAF4C8B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBackendMiniQrApi.CrossCutting.IoC", "DesafioBackendMiniQrApi.CrossCutting.IoC\DesafioBackendMiniQrApi.CrossCutting.IoC.csproj", "{7DF73BA4-5A02-4471-98B2-23521C30CE45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.CrossCutting.IoC", "DesafioBackendMiniQrApi.CrossCutting.IoC\DesafioBackendMiniQrApi.CrossCutting.IoC.csproj", "{7DF73BA4-5A02-4471-98B2-23521C30CE45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesafioBackendMiniQrApi.Application.ViewModels.Inputs
 {
-    public class InputCreateChargeVm
+    public class CreateChargeInputVm
     {
     }
 }

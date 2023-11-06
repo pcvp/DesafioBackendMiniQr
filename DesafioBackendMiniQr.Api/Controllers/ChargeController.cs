@@ -18,7 +18,7 @@ namespace DesafioBackendMiniQr.Api.Controllers
 
         [HttpPost]
         public async Task<ResultCreateChargeVm> CreateCharge(
-            InputCreateChargeVm createChargeVm
+            CreateChargeInputVm createChargeVm
             )
         {
             return await _chargeService.CreateCharge(createChargeVm);

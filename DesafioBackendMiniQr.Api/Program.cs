@@ -7,7 +7,10 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.RegisterServices(builder.Configuration.Get<AppSettings>());
+builder.Services
+    .RegisterServices(builder.Configuration.Get<AppSettings>())
+    .RegisterMediatR();
+
 var app = builder.Build();
 
 
