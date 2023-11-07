@@ -29,7 +29,7 @@ namespace DesafioBackendMiniQrApi.Domain.Strategies
                 case Charge charge:
                     return await CreateCharge(charge);
                 default:
-                    await _mediator.Publish(ErrorNotification.MINIQR01000);
+                    await _mediator.Publish(ErrorNotification.MINIQR0001);
                     return false;
             }
         }

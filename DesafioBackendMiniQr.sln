@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.CrossCutting", "DesafioBackendMiniQrApi.CrossCutting\DesafioBackendMiniQrApi.CrossCutting.csproj", "{0636F5C4-D9C1-48EF-967A-328C580F76A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.Integrations", "DesafioBackendMiniQrApi.Integrations\DesafioBackendMiniQrApi.Integrations.csproj", "{951A4DC0-CE4C-4650-806E-FA54166305D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pipedream.Integration", "DesafioBackendMiniQrApi.Integrations\Pipedream.Integration.csproj", "{951A4DC0-CE4C-4650-806E-FA54166305D1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBackendMiniQrApi.Tests", "DesafioBackendMiniQrApi.Tests\DesafioBackendMiniQrApi.Tests.csproj", "{7B0BB7CB-3AAB-452A-AB81-C73B1048823B}"
 EndProject

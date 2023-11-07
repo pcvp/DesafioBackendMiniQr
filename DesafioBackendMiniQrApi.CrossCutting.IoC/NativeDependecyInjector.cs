@@ -31,10 +31,19 @@ public static class NativeDependecyInjector
                 .UseSqlServer(configuration?.ConnectionStrings?.DbContext ?? string.Empty);
         });
 
+        services.AddIntegrations();
+
         services.AddScoped<IChargeService, ChargeService>();
         services.AddScoped<IChargeRepository, ChargeRepository>();
 
         services.AddAutoMapper(GetAssembliesToAutoMapper());
+        return services;
+    }
+
+    public static IServiceCollection AddIntegrations(this IServiceCollection services)
+    {
+        services.AddScoped<Pipedream.Integration.Interfaces.IChargeService,
+            Pipedream.Integration.Services.ChargeService>();
         return services;
     }
 

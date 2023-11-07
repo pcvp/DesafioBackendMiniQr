@@ -59,7 +59,7 @@ namespace DesafioBackendMiniQrApi.Data.Context
                 }
                 else if (entry.State == EntityState.Modified)
                 {
-                    entry.CurrentValues["UpdatedUtc"] = DateTime.UtcNow;
+                    entry.CurrentValues["UpdatedAtUtc"] = DateTime.UtcNow;
                 }
             }
         }

@@ -1,27 +1,46 @@
 using DesafioBackendMiniQrApi.Application.Interfaces;
 using DesafioBackendMiniQrApi.Application.ViewModels.Inputs;
 using DesafioBackendMiniQrApi.Application.ViewModels.Results;
+using DesafioBackendMiniQrApi.CrossCutting.ErrorNotification;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DesafioBackendMiniQr.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class ChargeController : ControllerBase
+    [Route("{version}/[controller]")]
+    public class ChargeController : MyControllerBase
     {
         private IChargeService _chargeService;
 
-        public ChargeController(IChargeService chargeService)
+        public ChargeController(IErrorNotificationResult errorNotificationResult,
+            IChargeService chargeService) : base(errorNotificationResult)
         {
             _chargeService = chargeService;
         }
 
         [HttpPost]
-        public async Task<ResultCreateChargeVm> CreateCharge(
-            CreateChargeInputVm createChargeVm
-            )
+        public async Task<IActionResult> CreateCharge(
+            CreateChargeInputVm createChargeVm, 
+            string version)
         {
-            return await _chargeService.CreateCharge(createChargeVm);
+            return await RunContent(async () =>
+            {
+                return await _chargeService.CreateCharge(createChargeVm);
+            }, "Cobrança criada com sucesso.");
+          
+        }
+
+        [HttpPost]
+        [Route("cancel")]
+        public async Task<IActionResult> CancelCharge(
+            CancelChargeInputVm cancelChargeVm,
+            string version)
+        {
+            return await RunContent(async () =>
+            {
+                return await _chargeService.CancelCharge(cancelChargeVm);
+            }, "Cobrança cancelada com sucesso.");
+
         }
     }
 }

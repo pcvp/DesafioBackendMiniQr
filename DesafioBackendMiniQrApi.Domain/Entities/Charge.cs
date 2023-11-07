@@ -19,6 +19,11 @@ namespace DesafioBackendMiniQrApi.Domain.Entities
             QrCode = qrCode;
         }
 
+        public void SetStatus(ChargeStatus status)
+        {
+            Status = status;
+        }
+
         public void SetExternalId(string externalId)
         {
             ExternalId = externalId;

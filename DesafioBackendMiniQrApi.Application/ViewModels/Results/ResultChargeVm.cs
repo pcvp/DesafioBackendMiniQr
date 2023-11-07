@@ -1,8 +1,6 @@
-﻿using DesafioBackendMiniQrApi.Domain.Entities;
-
-namespace DesafioBackendMiniQrApi.Application.ViewModels.Results
+﻿namespace DesafioBackendMiniQrApi.Application.ViewModels.Results
 {
-    public class ResultCreateChargeVm
+    public class ResultChargeVm
     {
         public Guid Id { get; set; }
         public string Status { get; set; }

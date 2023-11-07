@@ -18,13 +18,22 @@ namespace DesafioBackendMiniQrApi.Application.Services
             _mediator = mediator;
         }
 
-        public async Task<ResultCreateChargeVm> CreateCharge(CreateChargeInputVm createChargeVm)
+        public async Task<ResultChargeVm> CreateCharge(CreateChargeInputVm createChargeVm)
         {
             var command = _mapper.Map<CreateChargeCommand>(createChargeVm);
 
             var result = await _mediator.Send(command);
 
-            return _mapper.Map<ResultCreateChargeVm>(result);
+            return _mapper.Map<ResultChargeVm>(result);
+        }
+
+        public async Task<ResultChargeVm> CancelCharge(CancelChargeInputVm cancelChargeVm)
+        {
+            var command = _mapper.Map<CancelChargeCommand>(cancelChargeVm);
+
+            var result = await _mediator.Send(command);
+
+            return _mapper.Map<ResultChargeVm>(result);
         }
     }
 }

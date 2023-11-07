@@ -36,11 +36,27 @@ namespace DesafioBackendMiniQrApi.CrossCutting.ErrorNotification
         /// <summary>
         /// Versão inválida da Api.
         /// </summary>
-        public static ErrorNotification MINIQR01000 => new("MINIQR01000", string.Empty, "Versão inválida da Api.", severity: 2);
+        public static ErrorNotification MINIQR0001 => new("MINIQR0001", string.Empty, "Versão inválida da Api.", severity: 2);
 
         /// <summary>
         /// Strategy não implementada para o objeto enviado.
         /// </summary>
-        public static ErrorNotification MINIQR01001 => new("MINIQR01001", string.Empty, "Strategy não implementada para o objeto enviado.", severity: 2);
+        public static ErrorNotification MINIQR0002 => new("MINIQR0002", string.Empty, "Strategy não implementada para o objeto enviado.", severity: 2);
+
+        /// <summary>
+        /// Erro ao criar cobrança no parceiro
+        /// </summary>
+        public static ErrorNotification MINIQR0003 => new("MINIQR0003", string.Empty, "Erro ao criar cobrança no parceiro", severity: 2);
+
+        /// <summary>
+        /// Cobrança não encontrada
+        /// </summary>
+        public static ErrorNotification MINIQR0004 => new("MINIQR0004", string.Empty, "Cobrança não encontrada", severity: 2);
+
+
+        /// <summary>
+        /// Erro ao cancelar cobrança no parceiro
+        /// </summary>
+        public static ErrorNotification MINIQR0005 => new("MINIQR0005", string.Empty, "Erro ao cancelar cobrança no parceiro", severity: 2);
     }
 }

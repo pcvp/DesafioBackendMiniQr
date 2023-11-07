@@ -11,7 +11,8 @@ namespace DesafioBackendMiniQrApi.Application.AutoMapper
         public VmMappingProfile()
         {
             CreateMap<CreateChargeInputVm, CreateChargeCommand>();
-            CreateMap<Charge, ResultCreateChargeVm>();
+            CreateMap<CancelChargeInputVm, CancelChargeCommand>();
+            CreateMap<Charge, ResultChargeVm>();
         }
     }
 }
