@@ -6,7 +6,7 @@ using MediatR;
 using Pipedream.Integration.DTOs.Requests;
 using Pipedream.Integration.Interfaces;
 
-namespace DesafioBackendMiniQrApi.Domain.Strategies
+namespace DesafioBackendMiniQrApi.Domain.Strategies.CancelCharge
 {
     public class CancelChargeInPipeDreamStrategy : IStrategy
     {
@@ -37,14 +37,15 @@ namespace DesafioBackendMiniQrApi.Domain.Strategies
                 Id = charge.ExternalId!
             });
 
-            if (cancelledCharge.Data is null || !cancelledCharge.Success){
+            if (cancelledCharge.Data is null || !cancelledCharge.Success)
+            {
                 await _mediator.Publish(ErrorNotification.MINIQR0005);
                 return false;
             }
 
-            if(cancelledCharge.Data.Status.Equals("Canceled"))
+            if (cancelledCharge.Data.Status.Equals("Canceled"))
                 charge.SetStatus(ChargeStatus.CANCELED);
-            
+
             return true;
         }
     }

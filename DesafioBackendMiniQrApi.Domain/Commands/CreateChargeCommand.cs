@@ -6,5 +6,6 @@ namespace DesafioBackendMiniQrApi.Domain.Commands
     public class CreateChargeCommand : IRequest<Charge?>
     {
         public decimal Value { get; set; }
+        public Guid UserId { get; set; }
     }
 }

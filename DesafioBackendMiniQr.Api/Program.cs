@@ -8,6 +8,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddResponseCaching();
 builder.Services
     .RegisterServices(builder.Configuration.Get<AppSettings>())
     .RegisterMediatR();
@@ -21,6 +22,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseResponseCaching();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

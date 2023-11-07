@@ -4,6 +4,7 @@ using DesafioBackendMiniQrApi.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DesafioBackendMiniQrApi.Data.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20231107130248_Create user")]
+    partial class Createuser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,9 +28,6 @@ namespace DesafioBackendMiniQrApi.Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("CancelledByUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAtUtc")
@@ -55,8 +54,6 @@ namespace DesafioBackendMiniQrApi.Data.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CancelledByUserId");
 
                     b.HasIndex("UserId");
 
@@ -98,17 +95,11 @@ namespace DesafioBackendMiniQrApi.Data.Migrations
 
             modelBuilder.Entity("DesafioBackendMiniQrApi.Domain.Entities.Charge", b =>
                 {
-                    b.HasOne("DesafioBackendMiniQrApi.Domain.Entities.User", "CancelledByUser")
-                        .WithMany()
-                        .HasForeignKey("CancelledByUserId");
-
                     b.HasOne("DesafioBackendMiniQrApi.Domain.Entities.User", "User")
                         .WithMany("Charges")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("CancelledByUser");
 
                     b.Navigation("User");
                 });

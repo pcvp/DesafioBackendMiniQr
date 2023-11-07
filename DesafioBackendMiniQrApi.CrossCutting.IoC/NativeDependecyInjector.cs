@@ -36,6 +36,9 @@ public static class NativeDependecyInjector
         services.AddScoped<IChargeService, ChargeService>();
         services.AddScoped<IChargeRepository, ChargeRepository>();
 
+        services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IUserRepository, UserRepository>();
+
         services.AddAutoMapper(GetAssembliesToAutoMapper());
         return services;
     }

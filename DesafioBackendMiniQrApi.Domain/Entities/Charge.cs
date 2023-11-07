@@ -8,7 +8,10 @@ namespace DesafioBackendMiniQrApi.Domain.Entities
         public decimal Value { get; private set; }
         public string? QrCode { get; private set; }
         public string? ExternalId { get; private set; }
-
+        public virtual User User { get; set; }
+        public Guid UserId { get; set; }
+        public virtual User? CancelledByUser { get; set; }
+        public Guid? CancelledByUserId { get; set; }
         public override bool IsValid()
         {
             return true;
@@ -32,12 +35,13 @@ namespace DesafioBackendMiniQrApi.Domain.Entities
         #region Factories
         public class Factory
         {
-            public static Charge NewCharge(decimal value)
+            public static Charge NewCharge(decimal value, User user)
             {
                 return new Charge()
                 {
                     Status = ChargeStatus.PENDING,
-                    Value = value
+                    Value = value,
+                    User = user
                 };
             }
         }

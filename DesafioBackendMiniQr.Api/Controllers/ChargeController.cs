@@ -42,5 +42,18 @@ namespace DesafioBackendMiniQr.Api.Controllers
             }, "Cobrança cancelada com sucesso.");
 
         }
+
+        [HttpGet("{chargeId}")]
+        [ResponseCache(Duration = 30)]
+        public async Task<IActionResult> CancelCharge(
+            [FromRoute] Guid chargeId,
+            string version)
+        {
+            return await RunContent(async () =>
+            {
+                return await _chargeService.GetCharge(chargeId);
+            }, "Cobrança encontrada.");
+
+        }
     }
 }

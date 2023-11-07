@@ -12,5 +12,6 @@
         }
 
         public static Table Charge { get; } = new Table("Charges", "MiniQr");
+        public static Table User { get; } = new Table("Users", "MiniQr");
     }
 }

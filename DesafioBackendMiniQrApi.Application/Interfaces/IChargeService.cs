@@ -7,5 +7,6 @@ namespace DesafioBackendMiniQrApi.Application.Interfaces
     {
         Task<ResultChargeVm> CreateCharge(CreateChargeInputVm createChargeVm);
         Task<ResultChargeVm> CancelCharge(CancelChargeInputVm cancelChargeVm);
+        Task<ResultChargeVm> GetCharge(Guid chargeId);
     }
 }

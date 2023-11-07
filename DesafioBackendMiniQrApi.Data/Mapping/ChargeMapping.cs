@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DesafioBackendMiniQrApi.Data.Mapping
 {
-    public class ClientMapping : IEntityTypeConfiguration<Charge>
+    public class ChargeMapping : IEntityTypeConfiguration<Charge>
     {
         public void Configure(EntityTypeBuilder<Charge> builder)
         {
@@ -13,6 +13,11 @@ namespace DesafioBackendMiniQrApi.Data.Mapping
 
             builder.Property(c => c.Value).IsRequired().HasColumnType("decimal(18,2)");
             builder.Property(c => c.Status).IsRequired();
+            builder.Property(c => c.CancelledByUserId).HasDefaultValue(null);
+
+            builder.HasOne(c => c.User)
+                .WithMany(u => u.Charges)
+                .HasForeignKey(c => c.UserId);
         }
     }
 }

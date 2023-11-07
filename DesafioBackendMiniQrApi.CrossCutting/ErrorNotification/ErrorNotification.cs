@@ -53,10 +53,29 @@ namespace DesafioBackendMiniQrApi.CrossCutting.ErrorNotification
         /// </summary>
         public static ErrorNotification MINIQR0004 => new("MINIQR0004", string.Empty, "Cobrança não encontrada", severity: 2);
 
-
         /// <summary>
         /// Erro ao cancelar cobrança no parceiro
         /// </summary>
         public static ErrorNotification MINIQR0005 => new("MINIQR0005", string.Empty, "Erro ao cancelar cobrança no parceiro", severity: 2);
+
+        /// <summary>
+        /// Um usuário com esse email já foi cadastrado
+        /// </summary>
+        public static ErrorNotification MINIQR0006 => new("MINIQR0006", string.Empty, "Um usuário com esse email já foi cadastrado", severity: 2);
+
+        /// <summary>
+        /// Usuário não encontrado
+        /// </summary>
+        public static ErrorNotification MINIQR0007 => new("MINIQR0007", string.Empty, "Usuário não encontrado", severity: 2);
+
+        /// <summary>
+        /// Este usuário não está autorizado a criar cobranças!
+        /// </summary>
+        public static ErrorNotification MINIQR0008 => new("MINIQR0008", string.Empty, "Este usuário não está autorizado a criar cobranças!", severity: 2);
+
+        /// <summary>
+        /// Este usuário não está autorizado a cancelar cobranças!
+        /// </summary>
+        public static ErrorNotification MINIQR0009 => new("MINIQR0009", string.Empty, "Este usuário não está autorizado a cancelar cobranças!", severity: 2);
     }
 }

@@ -6,7 +6,7 @@ using MediatR;
 using Pipedream.Integration.DTOs.Requests;
 using Pipedream.Integration.Interfaces;
 
-namespace DesafioBackendMiniQrApi.Domain.Strategies
+namespace DesafioBackendMiniQrApi.Domain.Strategies.CreateCharge
 {
     public class CreateChargeInPipeDreamStrategy : IStrategy
     {
@@ -37,7 +37,8 @@ namespace DesafioBackendMiniQrApi.Domain.Strategies
                 Value = charge.Value
             });
 
-            if (createdCharge.Data is null || !createdCharge.Success){
+            if (createdCharge.Data is null || !createdCharge.Success)
+            {
                 await _mediator.Publish(ErrorNotification.MINIQR0003);
                 return false;
             }

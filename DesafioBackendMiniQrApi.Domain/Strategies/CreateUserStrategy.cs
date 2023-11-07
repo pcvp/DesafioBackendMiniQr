@@ -12,31 +12,38 @@ using MediatR;
 
 namespace DesafioBackendMiniQrApi.Domain.Strategies
 {
-    public class CreateChargeStrategy : IStrategy
+    public class CreateUserStrategy : IStrategy
     {
-        private readonly IChargeRepository _chargeRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IMediator _mediator;
 
-        public CreateChargeStrategy(IChargeRepository chargeRepository, IMediator mediator)
+        public CreateUserStrategy(IUserRepository userRepository, IMediator mediator)
         {
-            _chargeRepository = chargeRepository;
+            _userRepository = userRepository;
             _mediator = mediator;
         }
         public async Task<bool> Process<T>(T entity, T? source) where T : Entity
         {
             switch (entity)
             {
-                case Charge charge:
-                    return await CreateCharge(charge);
+                case User user:
+                    return await CreateUser(user);
                 default:
                     await _mediator.Publish(ErrorNotification.MINIQR0001);
                     return false;
             }
         }
 
-        private async Task<bool> CreateCharge(Charge charge)
+        private async Task<bool> CreateUser(User user)
         {
-            await _chargeRepository.CreateAsync(charge);
+            var userExists = (await _userRepository.FindAsNoTrackingAsync(u => u.Email.Equals(user.Email))).FirstOrDefault();
+            if (userExists is not null)
+            {
+                await _mediator.Publish(ErrorNotification.MINIQR0006);
+                return false;
+            }
+
+            await _userRepository.CreateAsync(user);
             return true;
         }
     }
